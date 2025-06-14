@@ -1,0 +1,11 @@
+FROM n8nio/n8n:latest
+
+FROM n8nio/n8n:latest
+
+ENV N8N_BASIC_AUTH_ACTIVE=true
+ENV N8N_BASIC_AUTH_USER=master
+ENV N8N_BASIC_AUTH_PASSWORD=Concred1000*
+
+EXPOSE 5678
+
+CMD ["n8n"]
