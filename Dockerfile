@@ -1,12 +1,16 @@
 FROM n8nio/n8n:latest
 
-# Ativa autenticação básica (login e senha para acessar o n8n)
 ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=master
 ENV N8N_BASIC_AUTH_PASSWORD=pM3GByqq
 
-# Evita erro de permissão em algumas hospedagens como Render
+ENV N8N_ENCRYPTION_KEY=AFEB7D27DC819D1816DA4377F826D
+
 ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
 
-# Expõe a porta padrão do n8n
+# Aqui está a conexão correta com seu banco Supabase
+ENV DB_TYPE=postgresdb
+ENV DB_POSTGRESDB_CONNECTION_STRING=postgresql://postgres:pKHUyqq@db.kkdbrwcdbojbylvizytn.supabase.co:5432/postgres
+ENV DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false
+
 EXPOSE 5678
